@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empresa - Registro de Empleados</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            padding: 50px;
+            background-color: #f0f2f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            width: 350px;
+        }
+        h2 { text-align: center; color: #333; }
+        .campo { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box; /* Evita que el input se salga del cuadro */
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        button:hover { background-color: #0056b3; }
+        #salida {
+            margin-top: 25px;
+            padding: 15px;
+            background-color: #e9ecef;
+            border-radius: 8px;
+            border-left: 5px solid #007bff;
+        }
+        .resultado-item { margin: 8px 0; font-size: 15px; }
+        span { font-weight: bold; color: #333; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Registro de Personal</h2>
+        <hr>
+
+        <div class="campo">
+            <label for="nombre">Nombre del Empleado:</label>
+            <input type="text" id="nombre" placeholder="Ej: Mary">
+        </div>
+
+        <div class="campo">
+            <label for="sexo">Sexo:</label>
+            <select id="sexo">
+                <option value="M">Masculino</option>
+                <option value="F">Femenino</option>
+            </select>
+        </div>
+
+        <button type="button" id="btnAgregar">Registrar y Calcular</button>
+
+        <div id="salida">
+            Hombres: <span id="lblHombres">0</span> <br>
+            Porcentaje Mujeres: <span id="lblPorcentaje">0%</span>
+        </div>
+    </div>
+
+    <script type="module" src="dist/controllers/Cl_cEmpresa.js"></script>
+
+</body>
+</html>
