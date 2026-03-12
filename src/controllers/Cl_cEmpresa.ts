@@ -12,6 +12,7 @@ export default class c_empresa {
     this.modelo = m;
     this.vista = v;
     this.cEmpleado = new c_empleado(vEmple);
+    this.vista.vincularEvento(() => this.procesar());
 
     this.vista.vincularEvento(() => this.procesar());
   }
@@ -25,14 +26,16 @@ export default class c_empresa {
     }
 
     this.modelo.procesarEmpleado(empleado);
+
     this.vista.reportarEmpresa(
       this.modelo.cantidadHombres(),
-      this.modelo.porcentajeMujeres()
+      this.modelo.porcentajeMujeres(),
+      this.modelo.cantidadTotal()
     );
   }
 }
 
-// ARRANQUE AUTOMÁTICO (Sin archivo principal separado)
+
 const mEmpresa = new cl_empresa();
 const vEmpresa = new v_empresa();
 const vEmpleado = new v_empleado();
